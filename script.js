@@ -169,7 +169,7 @@
         const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
         const ytMatch = work.youtube.match(regExp);
         const videoId = (ytMatch && ytMatch[2].length === 11) ? ytMatch[2] : null;
-        
+
         if (videoId) {
           thumbContent = `
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>

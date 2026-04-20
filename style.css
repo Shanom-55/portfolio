@@ -227,7 +227,7 @@ button {
 }
 
 .highlight {
-  background: linear-gradient(135deg, var(--orange-warm) 0%, var(--lime) 100%);
+  background: linear-gradient(135deg, var(--orange-warm) 0%, var(--lime-bright) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -385,7 +385,6 @@ button {
   height: 20px;
   border-right: 2px solid var(--brown-light);
   border-bottom: 2px solid var(--brown-light);
-  transform: rotate(45deg);
   animation: scroll-bounce 1.5s ease-in-out infinite;
 }
 
@@ -927,11 +926,11 @@ footer p {
 
   0%,
   100% {
-    transform: rotate(45deg) translateY(0);
+    transform: translateY(0) rotate(45deg);
   }
 
   50% {
-    transform: rotate(45deg) translateY(5px);
+    transform: translateY(8px) rotate(45deg);
   }
 }
 

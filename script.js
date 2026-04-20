@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    Shanom Portfolio — script.js
    Boba Pearl Canvas + Interactions
    ============================================ */
@@ -288,7 +288,7 @@ function escHtml(str) {
 
   // Apply reveal class to section children (works will be added dynamically)
   const revealTargets = document.querySelectorAll(
-    '.about-text, .about-stats, .stat-card, .contact-card, .section-title, .section-label'
+    '.about-text, .about-stats, .stat-card, .follow-card, .section-title, .section-label'
   );
 
   window.observeElements = (elements) => {
@@ -320,3 +320,4 @@ function escHtml(str) {
 })();
 
 // (Wave hover logic moved to initWorks function)
+

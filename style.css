@@ -1,4 +1,4 @@
-/* ===== CSS Variables — Boba Tea Theme ===== */
+﻿/* ===== CSS Variables — Boba Tea Theme ===== */
 :root {
   --white: #FDFAF6;
   --cream: #FFF4E8;
@@ -725,29 +725,29 @@ section {
 }
 
 /* ===== Contact ===== */
-#contact {
+#follow {
   background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
 }
 
-.contact-inner {
+.follow-inner {
   text-align: center;
 }
 
-.contact-desc {
+.follow-desc {
   color: var(--text-light);
   font-size: 1.05rem;
   margin-bottom: 2.5rem;
   line-height: 1.8;
 }
 
-.contact-cards {
+.follow-cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.2rem;
 }
 
-.contact-card {
+.follow-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -761,13 +761,13 @@ section {
   transition: var(--transition);
 }
 
-.contact-card:hover {
+.follow-card:hover {
   transform: translateY(-6px);
   border-color: var(--orange-soft);
   box-shadow: 0 16px 40px var(--shadow-boba);
 }
 
-.contact-icon {
+.follow-icon {
   font-size: 2rem;
   display: flex;
   align-items: center;
@@ -778,31 +778,31 @@ section {
   transition: var(--transition);
 }
 
-.contact-card--yt .contact-icon {
+.follow-card--yt .follow-icon {
   background: #FF0000;
   color: #fff;
   box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
 }
 
-.contact-card--yt:hover .contact-icon {
+.follow-card--yt:hover .follow-icon {
   background: #cc0000;
   box-shadow: 0 10px 28px rgba(255, 0, 0, 0.45);
   transform: scale(1.08);
 }
 
-.contact-card--x .contact-icon {
+.follow-card--x .follow-icon {
   background: #000;
   color: #fff;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.contact-card--x:hover .contact-icon {
+.follow-card--x:hover .follow-icon {
   background: #222;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
   transform: scale(1.08);
 }
 
-.contact-label {
+.follow-label {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -810,7 +810,7 @@ section {
   color: var(--text-light);
 }
 
-.contact-val {
+.follow-val {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--brown-dark);
@@ -1015,7 +1015,7 @@ footer p {
     grid-template-columns: 1fr 1fr;
   }
 
-  .contact-cards {
+  .follow-cards {
     flex-direction: column;
     align-items: center;
   }

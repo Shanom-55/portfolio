@@ -27,12 +27,17 @@
         <img src="pic/boba-cup.png" alt="Boba Tea Logo" class="nav-logo-img" />
         <span>Shanom</span>
       </div>
-      <ul class="nav-links">
-        <li><a href="#hero" id="nav-home">Home</a></li>
-        <li><a href="#about" id="nav-about">About</a></li>
-        <li><a href="#works" id="nav-works">Works</a></li>
-        <li><a href="#follow" id="nav-follow">Follow</a></li>
+      <ul class="nav-links" style="padding-right: 20px;">
+        <li><a href="#hero" id="nav-home" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" id="nav-about" data-i18n="nav_about">About</a></li>
+        <li><a href="#works" id="nav-works" data-i18n="nav_works">Works</a></li>
+        <li><a href="#follow" id="nav-follow" data-i18n="nav_follow">Follow</a></li>
       </ul>
+      <div class="lang-toggle" id="langToggle">
+        <button class="lang-btn active" data-lang="th" id="langTH">TH</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" id="langEN">EN</button>
+      </div>
       <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -42,17 +47,17 @@
   <!-- Hero Section -->
   <section id="hero">
     <div class="hero-content">
-      <div class="hero-badge">Music Producer & Motion Graphics</div>
-      <h1 class="hero-title">
+      <div class="hero-badge" data-i18n="hero_badge">Music Producer & Motion Graphics</div>
+      <h1 class="hero-title" data-i18n="hero_title_html">
         Hi, I'm <span class="highlight">Shanom</span>
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-i18n="hero_sub_html">
         ผมชอบทำเพลง<br />
         <em>I like making music</em>
       </p>
       <div class="hero-cta">
-        <a href="#works" class="btn-primary" id="hero-cta-works">ดูผลงาน</a>
-        <a href="#follow" class="btn-outline" id="hero-cta-follow">ติดตาม</a>
+        <a href="#works" class="btn-primary" id="hero-cta-works" data-i18n="hero_cta_works">ดูผลงาน</a>
+        <a href="#follow" class="btn-outline" id="hero-cta-follow" data-i18n="hero_cta_follow">ติดตาม</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -67,27 +72,27 @@
     </div>
     <div class="scroll-hint">
       <div class="scroll-arrow"></div>
-      <span>scroll down</span>
+      <span data-i18n="scroll_hint">scroll down</span>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
     <div class="section-container">
-      <div class="section-label">— About Me —</div>
-      <h2 class="section-title">ผมคือใคร?</h2>
+      <div class="section-label" data-i18n="about_label">— About Me —</div>
+      <h2 class="section-title" data-i18n="about_title">ผมคือใคร?</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>
+          <p data-i18n="about_p1_html">
             สวัสดีครับ ผม <strong>Shanom</strong> — Music Producer
             <br>ที่ชอบทำเพลงและทำ Motion Graphics
           </p>
-          <p>
+          <p data-i18n="about_p2_html">
             ผมชอบทำเพลงสไตล์เกมเพลง(Rhythm Game) และเพลงแนวอื่นๆ
             <br>ที่ชอบทำหลักๆ ก็จะมี Artcore กับ Hardcore
 
           </p>
-          <p>
+          <p data-i18n="about_p3">
             ตอนนี้กำลังสนใจการทำเพลง Vocaloid กับทำ Motion Graphics เพราะรู้สึกว่ามันสนุกดี
           </p>
           <div class="about-tags">
@@ -124,8 +129,8 @@
   <!-- Works Section -->
   <section id="works">
     <div class="section-container">
-      <div class="section-label">— My Works —</div>
-      <h2 class="section-title">ผลงานที่ผ่านมา</h2>
+      <div class="section-label" data-i18n="works_label">— My Works —</div>
+      <h2 class="section-title" data-i18n="works_title">ผลงานที่ผ่านมา</h2>
 
       <div class="works-tabs">
         <button class="tab-btn active" data-tab="music" id="tab-music">Music</button>
@@ -133,7 +138,8 @@
       </div>
 
       <div class="works-grid" id="worksGrid">
-        <div style="text-align: center; grid-column: 1 / -1; padding: 3rem; color: var(--text-light);" id="worksLoader">
+        <div style="text-align: center; grid-column: 1 / -1; padding: 3rem; color: var(--text-light);" id="worksLoader"
+          data-i18n="works_loading">
           กำลังโหลดผลงาน...
         </div>
       </div>
@@ -143,9 +149,9 @@
   <!-- Contact Section -->
   <section id="follow">
     <div class="section-container follow-inner">
-      <div class="section-label">— Follow Me —</div>
-      <h2 class="section-title">ติดตาม</h2>
-      <p class="follow-desc">
+      <div class="section-label" data-i18n="follow_label">— Follow Me —</div>
+      <h2 class="section-title" data-i18n="follow_title">ติดตาม</h2>
+      <p class="follow-desc" data-i18n="follow_desc">
         ติดตามเพื่อไม่พลาดผลงานใหม่ๆ
       </p>
       <div class="follow-cards">
@@ -182,7 +188,7 @@
         <img src="pic/boba-cup.png" alt="Boba" class="footer-boba" />
         <span>Shanom</span>
       </div>
-      <p>Made with 🧋 & ❤️ by Shanom</p>
+      <p data-i18n="footer_made">Made with 🧋 & ❤️ by Shanom</p>
       <p class="footer-copy">© 2026 Shanom. All rights reserved.</p>
     </div>
   </footer>

@@ -1,4 +1,4 @@
-﻿/* ===== CSS Variables — Boba Tea Theme ===== */
+/* ===== CSS Variables — Boba Tea Theme ===== */
 :root {
   --white: #FDFAF6;
   --cream: #FFF4E8;
@@ -115,6 +115,7 @@ button {
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -159,6 +160,47 @@ button {
   background: var(--brown-dark);
   border-radius: 2px;
   transition: var(--transition);
+}
+
+/* ===== Language Toggle ===== */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(232, 196, 154, 0.2);
+  border: 1.5px solid var(--brown-light);
+  border-radius: 50px;
+  padding: 4px 6px;
+  margin-left: 0.5rem;
+}
+
+.lang-btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50px;
+  color: var(--text-light);
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  color: var(--brown-dark);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--orange-warm), var(--brown));
+  color: white;
+  box-shadow: 0 2px 10px rgba(200, 100, 50, 0.3);
+}
+
+.lang-sep {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--brown-light);
+  user-select: none;
+  line-height: 1;
 }
 
 /* ===== Hero ===== */
@@ -1038,8 +1080,13 @@ footer p {
     display: none;
   }
 
+  .lang-toggle {
+    margin-left: auto;
+  }
+
   .nav-burger {
     display: flex;
+    margin-left: 0.6rem;
   }
 
   .works-grid {

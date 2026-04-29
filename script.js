@@ -1,7 +1,100 @@
-﻿/* ============================================
+/* ============================================
    Shanom Portfolio — script.js
-   Boba Pearl Canvas + Interactions
+   Boba Pearl Canvas + Interactions + i18n
    ============================================ */
+
+// ===== i18n Translation System =====
+const i18n = {
+  th: {
+    nav_home: 'หน้าแรก',
+    nav_about: 'เกี่ยวกับ',
+    nav_works: 'ผลงาน',
+    nav_follow: 'ติดตาม',
+    hero_badge: 'Music Producer & Motion Graphics',
+    hero_title_html: 'สวัสดี, ผมคือ <span class="highlight">Shanom</span>',
+    hero_sub_html: 'ผมชอบทำเพลง<br /><em>I like making music</em>',
+    hero_cta_works: 'ดูผลงาน',
+    hero_cta_follow: 'ติดตาม',
+    scroll_hint: 'เลื่อนลง',
+    about_label: '— เกี่ยวกับผม —',
+    about_title: 'ผมคือใคร?',
+    about_p1_html: 'สวัสดีครับ ผม <strong>Shanom</strong> — Music Producer<br>ที่ชอบทำเพลงและทำ Motion Graphics',
+    about_p2_html: 'ผมชอบทำเพลงสไตล์เกมเพลง(Rhythm Game) และเพลงแนวอื่นๆ<br>ที่ชอบทำหลักๆ ก็จะมี Artcore กับ Hardcore',
+    about_p3: 'ตอนนี้กำลังสนใจการทำเพลง Vocaloid กับทำ Motion Graphics เพราะรู้สึกว่ามันสนุกดี',
+    works_label: '— ผลงาน —',
+    works_title: 'ผลงานที่ผ่านมา',
+    works_loading: 'กำลังโหลดผลงาน...',
+    works_empty: 'ยังไม่มีผลงาน',
+    works_error: 'ไม่สามารถโหลดผลงานได้',
+    follow_label: '— ติดตามผม —',
+    follow_title: 'ติดตาม',
+    follow_desc: 'ติดตามเพื่อไม่พลาดผลงานใหม่ๆ',
+    footer_made: 'Made with 🧋 & ❤️ by Shanom',
+  },
+  en: {
+    nav_home: 'Home',
+    nav_about: 'About',
+    nav_works: 'Works',
+    nav_follow: 'Follow',
+    hero_badge: 'Music Producer & Motion Graphics',
+    hero_title_html: 'Hi, I\'m <span class="highlight">Shanom</span>',
+    hero_sub_html: 'I love making music<br /><em>Let\'s create something amazing</em>',
+    hero_cta_works: 'View Works',
+    hero_cta_follow: 'Follow Me',
+    scroll_hint: 'scroll down',
+    about_label: '— About Me —',
+    about_title: 'Who am I?',
+    about_p1_html: 'Hi there! I\'m <strong>Shanom</strong> — a Music Producer<br>who loves making music and creating Motion Graphics',
+    about_p2_html: 'I enjoy making rhythm game-style music and various other genres.<br>My main styles are Artcore and Hardcore',
+    about_p3: 'Currently, I\'m interested in making Vocaloid music and Motion Graphics because I find it really fun!',
+    works_label: '— My Works —',
+    works_title: 'Past Works',
+    works_loading: 'Loading works...',
+    works_empty: 'No works yet',
+    works_error: 'Unable to load works',
+    follow_label: '— Follow Me —',
+    follow_title: 'Follow',
+    follow_desc: 'Follow me to never miss new works!',
+    footer_made: 'Made with 🧋 & ❤️ by Shanom',
+  }
+};
+
+let currentLang = localStorage.getItem('shanom_lang') || 'th';
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('shanom_lang', lang);
+  document.documentElement.lang = lang;
+
+  const dict = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      if (key.endsWith('_html')) {
+        el.innerHTML = dict[key];
+      } else {
+        el.textContent = dict[key];
+      }
+    }
+  });
+
+  // Update lang toggle button active state
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+// Init language toggle
+(function initLangToggle() {
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyLanguage(btn.dataset.lang);
+    });
+  });
+
+  // Apply saved language on load
+  applyLanguage(currentLang);
+})();
 
 // ===== Boba Pearl Canvas Animation =====
 (function initBobaCanvas() {
@@ -163,7 +256,7 @@
     loader.style.display = 'none';
 
     if (works.length === 0) {
-      worksGrid.innerHTML = '<div style="text-align: center; grid-column: 1/-1; color: var(--text-light); padding: 2rem;">ยังไม่มีผลงาน</div>';
+      worksGrid.innerHTML = `<div style="text-align: center; grid-column: 1/-1; color: var(--text-light); padding: 2rem;">${i18n[currentLang].works_empty}</div>`;
       return;
     }
 
@@ -261,7 +354,7 @@
 
   } catch (err) {
     console.error("Error loading works:", err);
-    loader.textContent = 'ไม่สามารถโหลดผลงานได้';
+    loader.textContent = i18n[currentLang].works_error;
   }
 })();
 

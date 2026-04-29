@@ -11,7 +11,7 @@ const i18n = {
     nav_works: 'ผลงาน',
     nav_follow: 'ติดตาม',
     hero_badge: 'Music Producer & Motion Graphics',
-    hero_title_html: 'สวัสดี, ผม <span class="highlight">Shanom</span>',
+    hero_title_html: 'สวัสดีครับ, ผม <span class="highlight">Shanom</span>',
     hero_sub_html: 'ผมชอบทำเพลง<br /><em>I like making music</em>',
     hero_cta_works: 'ดูผลงาน',
     hero_cta_follow: 'ติดตาม',
